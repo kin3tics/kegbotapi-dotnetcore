@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using KegbotDotNetCore.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KegbotDotNetCore.API.Controllers
@@ -7,9 +7,21 @@ namespace KegbotDotNetCore.API.Controllers
     public class DrinksController : Controller
     {
         [HttpGet]
-        public void Get()
+        public DrinkSet Get(string start)
         {
-            
+            return new DrinkSet();
+        }
+
+        [HttpGet]
+        [Route("api/[controller]/{id}")]
+        public JsonResult GetById(string id)
+        {
+            return new JsonResult( new {
+                drink = new Drink(),
+                keg = new Keg(),
+                user = new User(),
+                session = new Session()
+            });
         }
     }
 }

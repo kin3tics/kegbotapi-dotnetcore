@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Swashbuckle.Swagger.Model;
 
 namespace KegbotDotNetCore.API
 {
@@ -17,6 +13,15 @@ namespace KegbotDotNetCore.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            /*Adding swagger generation with default setting */
+            services.AddSwaggerGen(c => {
+                c.SingleApiVersion(new Info {
+                    Version = "v1",
+                    Title = "Kegbot API - .Net Core",
+                    Description = ".Net Core implemenation of Kegbot API",
+                    TermsOfService = "None"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -28,6 +33,10 @@ namespace KegbotDotNetCore.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUi();
 
             app.UseMvcWithDefaultRoute();
         }
