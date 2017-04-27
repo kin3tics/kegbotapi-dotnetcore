@@ -1,0 +1,8 @@
+C:\kegbot-netcore\kegbotapi-dotnetcore\src\bin\Debug\netcoreapp1.1\KegbotDotNetCore.deps.json
+C:\kegbot-netcore\kegbotapi-dotnetcore\src\bin\Debug\netcoreapp1.1\KegbotDotNetCore.runtimeconfig.json
+C:\kegbot-netcore\kegbotapi-dotnetcore\src\bin\Debug\netcoreapp1.1\KegbotDotNetCore.runtimeconfig.dev.json
+C:\kegbot-netcore\kegbotapi-dotnetcore\src\obj\Debug\netcoreapp1.1\KegbotDotNetCore.AssemblyInfo.cs
+C:\kegbot-netcore\kegbotapi-dotnetcore\src\bin\Debug\netcoreapp1.1\KegbotDotNetCore.dll
+C:\kegbot-netcore\kegbotapi-dotnetcore\src\bin\Debug\netcoreapp1.1\KegbotDotNetCore.pdb
+C:\kegbot-netcore\kegbotapi-dotnetcore\src\obj\Debug\netcoreapp1.1\KegbotDotNetCore.dll
+C:\kegbot-netcore\kegbotapi-dotnetcore\src\obj\Debug\netcoreapp1.1\KegbotDotNetCore.pdb

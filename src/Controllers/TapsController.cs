@@ -8,39 +8,30 @@ namespace KegbotDotNetCore.API.Controllers
     public class TapsController : Controller
     {
         [HttpGet]
-        public JsonResult Get(string start)
+        public IEnumerable<Tap> Get(string start)
         {
-            return new JsonResult( new {
-                taps = new List<object> { 
-                    new {
-                        tap = new KegTap(),
-                        keg = new Keg(),
-                        beverage = new BeerType()
-                    }
-                }
-            });
+            return new List<Tap>();
         }
 
         [HttpGet]
         [Route("api/[controller]/{id}")]
-        public JsonResult GetById(string id)
+        public Tap GetById(string id)
         {
-            return new JsonResult( new {
-                tap = new KegTap(),
-                keg = new Keg()
-            });
+            return new Tap();
         }
 
         [HttpPost]
         [Route("api/[controller]/{id}")]
-        public JsonResult RecordDrink(string id, int ticks, decimal? volume_ml, string username, int? pour_time, int? now, int? duration, string auth_token, bool? spilled)
+        public PourEvent RecordDrink(PourEvent pourEvent)
         {
-            return new JsonResult( new {
-                drink = new Drink(),
-                keg = new Keg(),
-                user = new User(),
-                session = new Session()
-            });
+            return pourEvent;
+        }
+
+        [HttpGet]
+        [Route("api/[controller]/{id}/pours")]
+        public IEnumerable<PourEvent> GetPoursByTapId (string id) 
+        {
+            return new List<PourEvent>();
         }
     }
 }

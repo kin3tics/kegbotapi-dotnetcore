@@ -18,28 +18,16 @@ namespace KegbotDotNetCore.API.Controllers
 
         [HttpGet]
         [Route("api/[controller]/{id}")]
-        public JsonResult GetById (string id) 
+        public Keg GetById (string id) 
         {
-            return new JsonResult( new {
-                keg = new Keg(),
-                type = new BeerType(),
-                size = new KegSize(),
-                drinks = new List<Drink>()
-            });
+            return new Keg();
         }
 
         [HttpGet]
-        [Route("api/[controller]/{id}/drinks")]
-        public List<Drink> GetDrinksById (string id) 
+        [Route("api/[controller]/{id}/pours")]
+        public IEnumerable<PourEvent> GetPoursByKegId (string id) 
         {
-            return new List<Drink>();
-        }
-
-        [HttpGet]
-        [Route("api/[controller]/{id}/sessions")]
-        public List<Session> GetSessionsById (string id) 
-        {
-            return new List<Session>();
+            return new List<PourEvent>();
         }
     }
 }

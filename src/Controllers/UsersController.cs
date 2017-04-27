@@ -1,3 +1,4 @@
+/*
 using System.Collections.Generic;
 using KegbotDotNetCore.API.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -22,3 +23,4 @@ namespace KegbotDotNetCore.API.Controllers
         }
     }
 }
+*/
