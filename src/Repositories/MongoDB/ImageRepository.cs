@@ -15,32 +15,32 @@ namespace KegbotDotNetCore.API.Repositories.MongoDB
                 return _db.GetCollection<Image>("Images");
             }
         }
-        Image IRepository<Image>.Create(Image item)
+        public Image Create(Image item)
         {
             item.id = Guid.NewGuid().ToString();
             Images.InsertOne(item);
             return item;
         }
 
-        string IRepository<Image>.Delete(Image item)
+        public string Delete(Image item)
         {
             Images.DeleteOne(b => b.id == item.id);
             return item.id;
         }
 
-        IEnumerable<Image> IRepository<Image>.GetAll()
+        public IEnumerable<Image> GetAll()
         {
             var ImageList = Images.Find(b => true).ToList();
             return ImageList;
         }
 
-        Image IRepository<Image>.GetById(string id)
+        public Image GetById(string id)
         {
             var ImageItem = Images.Find(b => b.id == id).FirstOrDefault();
             return ImageItem;
         }
 
-        Image IRepository<Image>.Update(Image item)
+        public Image Update(Image item)
         {
             //UpdateOne if need performance
             Images.ReplaceOne(b => b.id == item.id, item);

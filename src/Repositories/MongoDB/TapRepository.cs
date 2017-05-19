@@ -15,32 +15,32 @@ namespace KegbotDotNetCore.API.Repositories.MongoDB
                 return _db.GetCollection<Tap>("Taps");
             }
         }
-        Tap IRepository<Tap>.Create(Tap item)
+        public Tap Create(Tap item)
         {
             item.id = Guid.NewGuid().ToString();
             Taps.InsertOne(item);
             return item;
         }
 
-        string IRepository<Tap>.Delete(Tap item)
+        public string Delete(Tap item)
         {
             Taps.DeleteOne(b => b.id == item.id);
             return item.id;
         }
 
-        IEnumerable<Tap> IRepository<Tap>.GetAll()
+        public IEnumerable<Tap> GetAll()
         {
             var TapList = Taps.Find(b => true).ToList();
             return TapList;
         }
 
-        Tap IRepository<Tap>.GetById(string id)
+        public Tap GetById(string id)
         {
             var TapItem = Taps.Find(b => b.id == id).FirstOrDefault();
             return TapItem;
         }
 
-        Tap IRepository<Tap>.Update(Tap item)
+        public Tap Update(Tap item)
         {
             //UpdateOne if need performance
             Taps.ReplaceOne(b => b.id == item.id, item);
