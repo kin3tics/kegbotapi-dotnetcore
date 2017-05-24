@@ -24,6 +24,14 @@ namespace KegbotDotNetCore.API.Controllers
             return _KegRepository.GetAll();
         }
 
+        
+        [HttpPost]
+        [ProducesResponseType(typeof(Keg), 200)]
+        public Keg Create(Keg keg)
+        {
+            return _KegRepository.Create(keg);
+        }
+
         [HttpGet]
         [Route("api/[controller]/{id}")]
         public Keg GetById (string id) 
