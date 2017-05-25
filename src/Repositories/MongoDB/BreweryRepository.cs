@@ -8,13 +8,6 @@ namespace KegbotDotNetCore.API.Repositories.MongoDB
 {
     public class BreweryRepository : BaseMongoDBRepository, IRepository<Brewery>
     {
-        private IMongoCollection<Brewery> Breweries
-        {
-            get
-            {
-                return _db.GetCollection<Brewery>("Breweries");
-            }
-        }
         public Brewery Create(Brewery item)
         {
             item.id = Guid.NewGuid().ToString();

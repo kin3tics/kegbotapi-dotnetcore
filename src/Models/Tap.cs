@@ -12,5 +12,6 @@ namespace KegbotDotNetCore.API.Models
         ///<summary>
         ///(optional)
         ///</summary>
+        public virtual Keg current_keg { get; set; }
     }
 }

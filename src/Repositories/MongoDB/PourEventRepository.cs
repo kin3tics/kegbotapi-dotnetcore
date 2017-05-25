@@ -3,6 +3,7 @@ using KegbotDotNetCore.API.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KegbotDotNetCore.API.Repositories.MongoDB
 {
@@ -18,6 +19,8 @@ namespace KegbotDotNetCore.API.Repositories.MongoDB
         public PourEvent Create(PourEvent item)
         {
             item.id = Guid.NewGuid().ToString();
+            item.tap = null;
+            item.keg = null;
             PourEvents.InsertOne(item);
             return item;
         }
@@ -31,17 +34,27 @@ namespace KegbotDotNetCore.API.Repositories.MongoDB
         public IEnumerable<PourEvent> GetAll()
         {
             var PourEventList = PourEvents.Find(b => true).ToList();
+            PourEventList = AttachEntities(PourEventList).ToList();
             return PourEventList;
         }
 
         public PourEvent GetById(string id)
         {
             var PourEventItem = PourEvents.Find(b => b.id == id).FirstOrDefault();
+            PourEventItem = AttachEntities(PourEventItem);
             return PourEventItem;
+        }
+
+        public IEnumerable<PourEvent> GetByIds(ICollection<string> ids) {
+            var pourEventList = PourEvents.Find(b => ids.Contains(b.id)).ToList();
+
+            return pourEventList;
         }
 
         public PourEvent Update(PourEvent item)
         {
+            item.keg = null;
+            item.tap = null;
             //UpdateOne if need performance
             PourEvents.ReplaceOne(b => b.id == item.id, item);
             return item;

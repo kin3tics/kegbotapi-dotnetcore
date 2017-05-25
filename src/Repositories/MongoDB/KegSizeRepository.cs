@@ -8,13 +8,6 @@ namespace KegbotDotNetCore.API.Repositories.MongoDB
 {
     public class KegSizeRepository : BaseMongoDBRepository, IRepository<KegSize>
     {
-        private IMongoCollection<KegSize> KegSizes
-        {
-            get
-            {
-                return _db.GetCollection<KegSize>("KegSizes");
-            }
-        }
         public KegSize Create(KegSize item)
         {
             item.id = Guid.NewGuid().ToString();

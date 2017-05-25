@@ -3,21 +3,17 @@ using KegbotDotNetCore.API.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KegbotDotNetCore.API.Repositories.MongoDB
 {
     public class KegRepository : BaseMongoDBRepository, IRepository<Keg>
     {
-        private IMongoCollection<Keg> Kegs
-        {
-            get
-            {
-                return _db.GetCollection<Keg>("Kegs");
-            }
-        }
         public Keg Create(Keg item)
         {
             item.id = Guid.NewGuid().ToString();
+            item.kegSize = null;
+            item.beer = null;
             Kegs.InsertOne(item);
             return item;
         }
@@ -31,17 +27,21 @@ namespace KegbotDotNetCore.API.Repositories.MongoDB
         public IEnumerable<Keg> GetAll()
         {
             var KegList = Kegs.Find(b => true).ToList();
+            KegList = AttachEntities(KegList).ToList();
             return KegList;
         }
 
         public Keg GetById(string id)
         {
             var KegItem = Kegs.Find(b => b.id == id).FirstOrDefault();
+            KegItem = AttachEntities(KegItem);
             return KegItem;
         }
 
         public Keg Update(Keg item)
         {
+            item.beer = null;
+            item.kegSize = null;
             //UpdateOne if need performance
             Kegs.ReplaceOne(b => b.id == item.id, item);
             return item;
