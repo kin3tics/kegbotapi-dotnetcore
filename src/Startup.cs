@@ -2,7 +2,8 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Swashbuckle.Swagger.Model;
+using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace KegbotDotNetCore.API
 {
@@ -15,12 +16,10 @@ namespace KegbotDotNetCore.API
             services.AddMvc();
             /*Adding swagger generation with default setting */
             services.AddSwaggerGen(c => {
-                c.SingleApiVersion(new Info {
-                    Version = "v1",
-                    Title = "Kegbot API - .Net Core",
-                    Description = ".Net Core implemenation of Kegbot API",
-                    TermsOfService = "None"
-                });
+                c.SwaggerDoc("v1", new Info { 
+                    Title = "Kegbot API - .Net Core", 
+                    Description = ".Net Core Kegbot API", 
+                    TermsOfService = "None" });
             });
         }
 
@@ -34,9 +33,14 @@ namespace KegbotDotNetCore.API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSwagger();
-
-            app.UseSwaggerUi();
+            app.UseSwagger(c =>
+            {
+                c.RouteTemplate = "api-docs/{documentName}/swagger.json";
+            });
+            
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/api-docs/v1/swagger.json", "Kegbot API V1");
+            });
 
             app.UseMvcWithDefaultRoute();
         }

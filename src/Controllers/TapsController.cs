@@ -23,22 +23,43 @@ namespace KegbotDotNetCore.API.Controllers
             return _TapRepository.GetAll();
         }
 
+        [HttpPut]
+        [ProducesResponseType(typeof(Tap), 200)]
+        public Tap Create(Tap tap)
+        {
+            return _TapRepository.Create(tap);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(typeof(Tap), 200)]
+        public Tap Update(Tap tap)
+        {
+            return _TapRepository.Update(tap);
+        }
+
+        [HttpDelete]
+        [ProducesResponseType(typeof(Tap), 200)]
+        public string Delete(Tap tap)
+        {
+            return _TapRepository.Delete(tap);
+        }
+
         [HttpGet]
-        [Route("api/[controller]/{id}")]
+        [Route("{id}")]
         public Tap GetById(string id)
         {
             return _TapRepository.GetById(id);
         }
 
         [HttpPost]
-        [Route("api/[controller]/{id}")]
+        [Route("{id}")]
         public PourEvent RecordDrink(PourEvent pourEvent)
         {
             return _PoursRepository.Create(pourEvent);
         }
 
         [HttpGet]
-        [Route("api/[controller]/{id}/pours")]
+        [Route("{id}/pours")]
         public IEnumerable<PourEvent> GetPoursByTapId (string id) 
         {
             var pours = _PoursRepository.GetAll()

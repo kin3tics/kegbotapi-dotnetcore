@@ -1759,55 +1759,67 @@
           }
         }
       },
-      "Swashbuckle/6.0.0-beta901": {
+      "Swashbuckle.AspNetCore/1.0.0": {
         "type": "package",
         "dependencies": {
-          "Swashbuckle.SwaggerGen": "6.0.0-beta901",
-          "Swashbuckle.SwaggerUi": "6.0.0-beta901"
+          "NETStandard.Library": "1.6.1",
+          "Swashbuckle.AspNetCore.Swagger": "1.0.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "1.0.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.dll": {}
         }
       },
-      "Swashbuckle.Swagger/6.0.0-beta901": {
+      "Swashbuckle.AspNetCore.Swagger/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
-          "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0"
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0",
+          "NETStandard.Library": "1.6.1"
         },
         "compile": {
-          "lib/netstandard1.6/Swashbuckle.Swagger.dll": {}
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.6/Swashbuckle.Swagger.dll": {}
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.dll": {}
         }
       },
-      "Swashbuckle.SwaggerGen/6.0.0-beta901": {
+      "Swashbuckle.AspNetCore.SwaggerGen/1.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.ApiExplorer": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
           "Microsoft.AspNetCore.Mvc.DataAnnotations": "1.0.0",
-          "Swashbuckle.Swagger": "6.0.0-beta901",
+          "NETStandard.Library": "1.6.1",
+          "Swashbuckle.AspNetCore.Swagger": "1.0.0",
           "System.Xml.XPath": "4.0.1"
         },
         "compile": {
-          "lib/netstandard1.6/Swashbuckle.SwaggerGen.dll": {}
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.6/Swashbuckle.SwaggerGen.dll": {}
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
         }
       },
-      "Swashbuckle.SwaggerUi/6.0.0-beta901": {
+      "Swashbuckle.AspNetCore.SwaggerUI/1.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
+          "Microsoft.AspNetCore.Routing": "1.0.0",
           "Microsoft.AspNetCore.StaticFiles": "1.0.0",
           "Microsoft.Extensions.FileProviders.Embedded": "1.0.0",
-          "System.Xml.XPath": "4.0.1"
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Xml.XPath": "4.0.0"
         },
         "compile": {
-          "lib/netstandard1.6/Swashbuckle.SwaggerUi.dll": {}
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.6/Swashbuckle.SwaggerUi.dll": {}
+          "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -5268,46 +5280,54 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
-    "Swashbuckle/6.0.0-beta901": {
-      "sha512": "7QlFBzUxOwDrUOo2ZMLzF1ekhelozTUCzNifnz2rND+HqR0lJ6Bpl5QfIDVRnjMAge9LLTsc+TQLynkLVliKWw==",
+    "Swashbuckle.AspNetCore/1.0.0": {
+      "sha512": "pYppc+iPifsAYUWi+UoblnjFkUtfP9RZfj5JQaUmEgiWRz5RsCcIuKHvNCGG5AojVKfgjWC4naUPJx4fCjqvDg==",
       "type": "package",
-      "path": "swashbuckle/6.0.0-beta901",
+      "path": "swashbuckle.aspnetcore/1.0.0",
       "files": [
-        "swashbuckle.6.0.0-beta901.nupkg.sha512",
-        "swashbuckle.nuspec"
+        "lib/net451/Swashbuckle.AspNetCore.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.dll",
+        "swashbuckle.aspnetcore.1.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.nuspec"
       ]
     },
-    "Swashbuckle.Swagger/6.0.0-beta901": {
-      "sha512": "Aa9fzgCfJ6STF9EJyvpHz0J2BUKMYOV/ASZVvEN/Z8Tad4Ovn2KiKr6yN5rrXvtVqWjYlOiFPd01TM/DCtmKYA==",
+    "Swashbuckle.AspNetCore.Swagger/1.0.0": {
+      "sha512": "tzZ6tXjopV6jvcHzOX7PjyYBWqof5mhJUXqxb/kPF17Z5LXxr+uglnTLlYOjWCm5BfvdxWYtU95uJgc14L1Eqw==",
       "type": "package",
-      "path": "swashbuckle.swagger/6.0.0-beta901",
+      "path": "swashbuckle.aspnetcore.swagger/1.0.0",
       "files": [
-        "lib/net451/Swashbuckle.Swagger.dll",
-        "lib/netstandard1.6/Swashbuckle.Swagger.dll",
-        "swashbuckle.swagger.6.0.0-beta901.nupkg.sha512",
-        "swashbuckle.swagger.nuspec"
+        "lib/net451/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/net451/Swashbuckle.AspNetCore.Swagger.xml",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.Swagger.xml",
+        "swashbuckle.aspnetcore.swagger.1.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swagger.nuspec"
       ]
     },
-    "Swashbuckle.SwaggerGen/6.0.0-beta901": {
-      "sha512": "lLznzenpFMkSyIygf7PZr9f48PRT51kSrrfsvufgciUxnKOBsGJMAFhBWQFccYSxDjFYdP0EOfPU6yZrGwZ+nQ==",
+    "Swashbuckle.AspNetCore.SwaggerGen/1.0.0": {
+      "sha512": "1kuKS+4x1m85gpTOqICp5BRZB3Ir6VsegPN9hanH6xRp+tGDQNfFhVNPZ59Wrl8gM8YqIhB85xmFAkK68CqVdA==",
       "type": "package",
-      "path": "swashbuckle.swaggergen/6.0.0-beta901",
+      "path": "swashbuckle.aspnetcore.swaggergen/1.0.0",
       "files": [
-        "lib/net451/Swashbuckle.SwaggerGen.dll",
-        "lib/netstandard1.6/Swashbuckle.SwaggerGen.dll",
-        "swashbuckle.swaggergen.6.0.0-beta901.nupkg.sha512",
-        "swashbuckle.swaggergen.nuspec"
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "swashbuckle.aspnetcore.swaggergen.1.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggergen.nuspec"
       ]
     },
-    "Swashbuckle.SwaggerUi/6.0.0-beta901": {
-      "sha512": "qqYh14nwLQI4NCTYQXjtoXoAjv1Fonio5LFRLlbQ8vfDUMOjEzBw94oLUF7uRBivrY6NEEqTmBasSdujveCCeA==",
+    "Swashbuckle.AspNetCore.SwaggerUI/1.0.0": {
+      "sha512": "syirndQQePJXF8Dgzgjqt0AoxWVguPQy/p4siHNACBSGicxvk6AAd1ULIFE83ANJOCl2GmXuAvNAZBMXGbxK9A==",
       "type": "package",
-      "path": "swashbuckle.swaggerui/6.0.0-beta901",
+      "path": "swashbuckle.aspnetcore.swaggerui/1.0.0",
       "files": [
-        "lib/net451/Swashbuckle.SwaggerUi.dll",
-        "lib/netstandard1.6/Swashbuckle.SwaggerUi.dll",
-        "swashbuckle.swaggerui.6.0.0-beta901.nupkg.sha512",
-        "swashbuckle.swaggerui.nuspec"
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/net451/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/netstandard1.6/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "swashbuckle.aspnetcore.swaggerui.1.0.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -9958,7 +9978,7 @@
       "Microsoft.AspNetCore.Mvc >= 1.1.1",
       "Microsoft.NETCore.App >= 1.1.1",
       "MongoDB.Driver >= 2.4.3",
-      "Swashbuckle >= 6.0.0-beta901"
+      "Swashbuckle.AspNetCore >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -10003,9 +10023,9 @@
             "target": "Package",
             "version": "0.17.3"
           },
-          "Swashbuckle": {
+          "Swashbuckle.AspNetCore": {
             "target": "Package",
-            "version": "6.0.0-beta901"
+            "version": "1.0.0"
           },
           "MongoDB.Driver": {
             "target": "Package",

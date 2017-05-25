@@ -25,22 +25,36 @@ namespace KegbotDotNetCore.API.Controllers
         }
 
         
-        [HttpPost]
+        [HttpPut]
         [ProducesResponseType(typeof(Keg), 200)]
         public Keg Create(Keg keg)
         {
             return _KegRepository.Create(keg);
         }
 
+        [HttpPost]
+        [ProducesResponseType(typeof(Keg), 200)]
+        public Keg Update(Keg keg)
+        {
+            return _KegRepository.Update(keg);
+        }
+
+        [HttpDelete]
+        [ProducesResponseType(typeof(Keg), 200)]
+        public string Delete(Keg keg)
+        {
+            return _KegRepository.Delete(keg);
+        }
+
         [HttpGet]
-        [Route("api/[controller]/{id}")]
+        [Route("{id}")]
         public Keg GetById (string id) 
         {
             return _KegRepository.GetById(id);
         }
 
         [HttpGet]
-        [Route("api/[controller]/{id}/pours")]
+        [Route("{id}/pours")]
         public IEnumerable<PourEvent> GetPoursByKegId (string id) 
         {
             var pours = _PoursRepository.GetAll()
